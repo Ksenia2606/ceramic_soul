@@ -1,0 +1,130 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.footer {
+    background-color: $dark;
+    padding: 50px 0;
+
+    .light {
+        color: $light;
+        text-align: left;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 40px;
+    }
+
+    &__block-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__input-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+    }
+
+    &__fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__label {
+        font-weight: 400;
+        font-size: 16px;
+        color: $light;
+    }
+
+    &__input {
+        margin-top: 40px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid $ui-active;
+        padding-bottom: 15px;
+
+        &::placeholder {
+            font-weight: 400;
+            font-size: 14px;
+            color: $ui-active;
+        }
+    }
+
+    &__check-block {
+        display: flex;
+        align-items: center;
+
+        a {
+            margin-left: 3px;
+            color: #a22dc6;
+            text-decoration: none;
+        }
+    }
+
+
+    &__checkbox {
+        margin-right: 15px;
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        border: 1px solid $light;
+        border-radius: 2px;
+        cursor: pointer;
+
+        &:checked {
+            background-color: #a22dc6;
+            color: $light;
+            border: none;
+
+            &::after {
+                content: "✓";
+                display: block;
+                text-align: center;
+                line-height: 16px;
+            }
+        }
+    }
+
+    &__info-wrapper {
+        display: flex;
+        column-gap: 66px;
+        row-gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .links__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px
+    }
+
+    &__link {
+        font-weight: 400;
+        font-size: 16px;
+        color: $light;
+        text-decoration: none;
+    }
+
+    &__icons {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__social-icon {
+        text-decoration: none;
+        color: $light;
+        font-size: 24px;
+    }
+
+    .copyright-txt {
+        margin-top: 40px;
+        font-weight: 400;
+        font-size: 14px;
+        color: $light;
+        text-align: center;
+    }
+}
