@@ -1,0 +1,112 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.works {
+    padding-top: 60px;
+
+    .container {
+        position: relative;
+    }
+
+    &__slider {
+        margin-top: 40px;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+    }
+
+    &__slider-nav {
+        display: none;
+    }
+
+    .swiper-pagination {
+        bottom: -40px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        border-radius: 0;
+        background-color: $dark;
+        opacity: 1;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $ceramic;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .works {
+        .swiper-slide img {
+            display: block;
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        &__slider {
+            margin-top: 45px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .works {
+
+        &__wrapper {
+            position: relative;
+        }
+
+        &__slider {
+            margin: 80px 40px 0 40px;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+        }
+
+        .swiper-pagination {
+            bottom: -35px;
+        }
+
+        &__slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            font-size: 21px;
+
+            &::before {
+                width: auto;
+                margin: 0;
+            }
+        }
+
+        .icon-left-open {
+            left: 12px;
+        }
+
+        .icon-right-open {
+            right: 12px;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .works {
+        padding-top: 100px;
+
+        &__slider {
+            margin: 80px 85px 0 85px;
+        }
+
+        .icon-left-open {
+            left: 34px;
+        }
+
+        .icon-right-open {
+            right: 34px;
+        }
+    }
+}
