@@ -105,10 +105,13 @@
         flex-wrap: wrap;
     }
 
-    .links__wrapper {
+    &__list {
         display: flex;
         flex-direction: column;
-        gap: 20px
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
     }
 
     &__link {
@@ -121,6 +124,9 @@
     &__icons {
         display: flex;
         gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
     }
 
     &__social-icon {
