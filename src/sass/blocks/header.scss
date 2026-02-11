@@ -33,6 +33,7 @@
     }
 
     &__menu {
+        z-index: 10;
         padding: 50px 10px;
         position: fixed;
         width: 100vw;
