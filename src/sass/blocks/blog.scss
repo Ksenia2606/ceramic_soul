@@ -1,0 +1,126 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.blog {
+    padding: 50px 0 60px 0;
+
+    &__title {
+        margin-top: 60px;
+    }
+
+    &__wrapper {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__card {
+        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+        background: $light;
+        border: 1px solid $dark;
+    }
+
+    &__data {
+
+        &-column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            padding: 25px 25px 0 25px;
+        }
+
+        &-title {
+            text-align: left;
+        }
+
+        &-img {
+            width: calc(100% + 2px);
+            max-inline-size: none;
+            transform: translateX(-1px) translateY(-1px);
+        }
+    }
+
+    &__text {
+        padding: 25px;
+        font-weight: 400;
+        font-size: 16px;
+        color: $dark;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .blog {
+
+        &__wrapper {
+            position: relative;
+            padding: 25px 25px 0 25px;
+
+            &::before {
+                content: "";
+                width: 200px;
+                height: 1px;
+                background-color: $dark;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            &::after {
+                content: "";
+                width: 1px;
+                height: 200px;
+                background-color: $dark;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        &__data {
+
+            &-column {
+                justify-content: space-between;
+                border-left: none;
+            }
+        }
+
+        &__text {
+            padding: 15px 25px 25px 25px;
+        }
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .blog {
+
+        &__wrapper {
+            align-items: stretch;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        &__card {
+            max-width: calc(50% - 25px);
+        }
+
+        &__data {
+
+            &-img {
+                height: 240px;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .blog {
+        padding: 40px 0 100px 0;
+
+        &__title {
+            margin-top: 100px;
+        }
+    }
+}
