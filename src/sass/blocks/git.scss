@@ -112,6 +112,10 @@
     &__icon {
         display: none;
     }
+
+    &__about-section {
+        padding-top: 60px;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -186,6 +190,10 @@
         &__fieldset {
             display: flex;
             gap: 45px;
+        }
+
+        &__about-section {
+            padding-top: 100px;
         }
     }
 }

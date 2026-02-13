@@ -1,0 +1,58 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.findus {
+    padding: 60px 0;
+
+    &__map-wrapper {
+        margin-top: 60px;
+
+        iframe {
+            width: 100%;
+            height: 58vw;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .findus {
+
+        &__map-wrapper {
+
+            iframe {
+                display: block;
+                margin: 0 auto;
+                width: 663px;
+                height: 400px;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .findus {
+
+        &__map-wrapper {
+
+            iframe {
+                height: 500px;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 1920px) {
+    .findus {
+        padding: 100px 0;
+
+        &__map-wrapper {
+            margin-top: 80px;
+
+            iframe {
+                width: 801px;
+                height: 604px;
+            }
+        }
+    }
+}
