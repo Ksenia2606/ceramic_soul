@@ -1,5 +1,6 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import JustValidate from 'just-validate';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -77,3 +78,111 @@ try {
     contents.forEach((c, i) => (c.style.display = i === 0 ? "flex" : "none"));
 } catch (e) { }
 
+try {
+    const validatorGit = new JustValidate('.git__form');
+
+    validatorGit
+        .addField('#name', [
+            {
+                rule: 'required',
+                errorMessage: "Please fill the name"
+
+            },
+            {
+                rule: 'minLength',
+                value: 2,
+                errorMessage: "Min length: 2 letters"
+            },
+        ])
+        .addField('#email', [
+            {
+                rule: 'required',
+                errorMessage: "Please fill the email"
+            },
+            {
+                rule: 'email',
+            },
+        ])
+        .addField('#question', [
+            {
+                rule: 'required',
+                errorMessage: "Please write a message"
+            },
+            {
+                rule: 'minLength',
+                value: 10,
+                errorMessage: "Min length: 10 letters"
+            },
+            {
+                rule: 'maxLength',
+                value: 200,
+                errorMessage: "Max length: 200 letters"
+            },
+        ],
+            {
+                errorsContainer: document.querySelector('#question').parentElement.querySelector('.error-message')
+            })
+        .addField('#checkbox', [
+            {
+                rule: 'required',
+                errorMessage: "Please agree with the terms"
+            },
+        ],
+            {
+                errorsContainer: document.querySelector('#checkbox').parentElement.parentElement.querySelector('.checkbox-error-message')
+            }
+        )
+        .onSuccess((event) => {
+            const form = event.currentTarget;
+            const formData = new FormData(form);
+
+            fetch("https://httpbin.org/post", {
+                method: "POST",
+                body: formData,
+            }).then(res => res.json()).then(data => {
+                console.log('Success', data);
+                form.reset();
+            })
+        });
+} catch (e) {
+
+}
+
+try {
+    const validatorFooter = new JustValidate('.footer__form');
+
+    validatorFooter
+        .addField('#footer__email', [
+            {
+                rule: 'required',
+                errorMessage: "Please fill the email"
+            },
+            {
+                rule: 'email',
+            },
+        ])
+        .addField('#footer__checkbox', [
+            {
+                rule: 'required',
+                errorMessage: "Please agree with the terms"
+            },
+        ],
+            {
+                errorsContainer: document.querySelector('#footer__checkbox').parentElement.parentElement.querySelector('.checkbox-error-message')
+            }
+        )
+        .onSuccess((event) => {
+            const form = event.currentTarget;
+            const formData = new FormData(form);
+
+            fetch("https://httpbin.org/post", {
+                method: "POST",
+                body: formData,
+            }).then(res => res.json()).then(data => {
+                console.log('Success', data);
+                form.reset();
+            })
+        });
+} catch (e) {
+
+}
